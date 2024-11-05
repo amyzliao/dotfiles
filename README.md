@@ -21,3 +21,7 @@ It's also important to note:
 - my command key is rebound to ctrl
 - my ctrl key is rebound to globe
 - my option key is still option
+
+Bugs:
+- Ctrl+Tab in arc for some reason refocuses me to vscode
+- Capslock + W in any window also for some reason refocuses me to vscode
