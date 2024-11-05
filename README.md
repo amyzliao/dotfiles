@@ -5,7 +5,7 @@ These things live in root `~/`:
 .config
 ```
 
-The `vscode-config/User` just holds my vscode User `keybindings.json` and User `settings.json` files.
+The `vscode-config/User` directory just holds my vscode User `keybindings.json` and User `settings.json` files.
 
 I use:
 - [yabai](https://github.com/koekeishiya/yabai/wiki) tiling window manager
