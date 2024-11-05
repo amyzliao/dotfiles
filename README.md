@@ -1,3 +1,5 @@
+# I use a mac M2 chip
+
 These things live in root `~/`:
 ```
 .skhdrc
@@ -15,6 +17,7 @@ I use:
   - I have configured scripting addition
 - [the neovim vscode extension](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 - [the which key vscode extension](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey)
+- [tmux](https://github.com/tmux/tmux/wiki)
 
 It's also important to note:
 - my globe key is rebound to command
@@ -23,4 +26,4 @@ It's also important to note:
 - my option key is still option
 
 Bugs:
-none :)
+- none :)
