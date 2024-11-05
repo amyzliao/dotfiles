@@ -23,5 +23,4 @@ It's also important to note:
 - my option key is still option
 
 Bugs:
-- Ctrl+Tab in arc for some reason refocuses me to vscode
-- Capslock + W in any window also for some reason refocuses me to vscode
+none :)
