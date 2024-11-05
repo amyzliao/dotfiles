@@ -121,6 +121,43 @@
             ]
         },
         {
+            "key": "c",
+            "name": "github copilot...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "s",
+                    "name": "trigger inline suggestion",
+                    "type": "command",
+                    "command": "editor.action.inlineSuggest.trigger"
+                },
+                {
+                    "key": "q",
+                    "name": "quick chat",
+                    "type": "command",
+                    "command": "workbench.action.openQuickChat"
+                },
+                {
+                    "key": "i",
+                    "name": "inline chat",
+                    "type": "command",
+                    "command": "inlineChat.startWithCurrentLine"
+                },
+                {
+                    "key": "e",
+                    "name": "focus copilot edits",
+                    "type": "command",
+                    "command": "workbench.panel.chat.view.edits.focus"
+                },
+                {
+                    "key": "o",
+                    "name": "toggle copilot on/off",
+                    "type": "command",
+                    "command": "github.copilot.toggleCopilot"
+                },            
+            ]
+        },
+        {
             "key": "d",
             "name": "Debug...",
             "type": "bindings",
@@ -623,4 +660,12 @@
         "workbench.action.tasks.runTask"
     ],
     "terminal.integrated.defaultProfile.linux": "bash",
+    "github.copilot.chat.terminalChatLocation": "quickChat",
+    "github.copilot.advanced": {},
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
 }
