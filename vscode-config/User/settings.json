@@ -668,4 +668,10 @@
         "markdown": false,
         "scminput": false
     },
+    "terminal.integrated.defaultProfile.osx": "tmux",
+    "zenMode.fullScreen": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.showTabs": "none",
+    "zenMode.silentNotifications": false,
+    "zenMode.centerLayout": false,
 }
