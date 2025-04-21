@@ -1,6 +1,6 @@
 {
     "editor.formatOnSave": true,
-    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/Cellar/neovim/0.10.1/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/Cellar/neovim/0.10.3/bin/nvim",
     "nvim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -154,7 +154,7 @@
                     "name": "toggle copilot on/off",
                     "type": "command",
                     "command": "github.copilot.toggleCopilot"
-                },            
+                },
             ]
         },
         {
@@ -643,7 +643,6 @@
     "[javascript]": {
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
     },
-    "window.zoomLevel": -1,
     "[typescriptreact]": {
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
     },
@@ -674,4 +673,112 @@
     "zenMode.showTabs": "none",
     "zenMode.silentNotifications": false,
     "zenMode.centerLayout": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "mervin.markdown-formatter",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "markup.bold.markdown",
+                "settings": {
+                    "foreground": "#C485BF",
+                    "fontStyle": "bold",
+                }
+            },
+            {
+                "scope": "markup.italic.markdown",
+                "settings": {
+                    // dark mode
+                    "foreground": "#D7BA7D",
+                    // light mode
+                    // "foreground": "#ba7506",
+                    "fontStyle": "italic",
+                }
+            },
+            {
+                "scope": "punctuation.definition.list.begin.markdown",
+                "settings": {
+                    "foreground": "#097acb",
+                }
+            },
+            {
+                "scope": "markup.list",
+                "settings": {
+                    // dark mode: white
+                    // "foreground": "#ffffff",
+                    // light mode: black
+                    // "foreground": "#000000",
+                }
+            },
+            {
+                "scope": "markup.inline.raw",
+                "settings": {
+                    "foreground": "#4EC9B0",
+                }
+            },
+            {
+                "scope": "heading.1.markdown entity.name.section.markdown, heading.1.markdown punctuation.definition.heading.markdown",
+                "settings": {
+                    // dark mode
+                    "foreground": "#DCDCAA",
+                    // light mode
+                    // "foreground": "#acac14",
+                    "fontStyle": "bold",
+                }
+            },
+            {
+                "scope": "heading.2.markdown entity.name.section.markdown, heading.2.markdown punctuation.definition.heading.markdown",
+                "settings": {
+                    // dark mode
+                    "foreground": "#9CDCFE",
+                    // light mode
+                    // "foreground": "#3598ce",
+                }
+            },
+            {
+                "scope": "heading.3.markdown entity.name.section.markdown, heading.3.markdown punctuation.definition.heading.markdown",
+                "settings": {
+                    // dark mode
+                    "foreground": "#B4CDA7",
+                    // light mode
+                    // "foreground": "#4fb419",
+                }
+            },
+            {
+                "scope": "heading.4.markdown entity.name.section.markdown, heading.4.markdown punctuation.definition.heading.markdown",
+                "settings": {
+                    // dark mode
+                    "foreground": "#569CD6",
+                    // light mode
+                    // "foreground": "#3e4abc",
+                }
+            },
+            {
+                "scope": "heading.5.markdown entity.name.section.markdown, heading.5.markdown punctuation.definition.heading.markdown",
+                "settings": {
+                    // dark mode
+                    // "foreground": "#569CD6",
+                    // light mode
+                    "foreground": "#2279c1",
+                }
+            },
+            {
+                "scope": "heading.6.markdown entity.name.section.markdown, heading.6.markdown punctuation.definition.heading.markdown",
+                "settings": {
+                    // dark mode
+                    "foreground": "#569CD6",
+                    // light mode
+                    // "foreground": "#2279c1",
+                }
+            },
+        ]
+    }
 }
