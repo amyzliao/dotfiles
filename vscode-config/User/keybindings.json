@@ -87,11 +87,6 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "shit+tab",
-        "command": "selectPrevSuggestion",
-        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    },
-    {
         "key": "shift+tab",
         "command": "selectPrevSuggestion",
         "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
@@ -273,10 +268,6 @@
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
     {
-        "key": "shift+tab",
-        "command": "editor.action.outdentLines"
-    },
-    {
         "key": "ctrl+shift+l",
         "command": "workbench.action.moveEditorToNextGroup"
     },
@@ -338,5 +329,23 @@
         "key": "cmd+k z",
         "command": "-workbench.action.toggleZenMode",
         "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "shift+l",
+        "command": "vscode-neovim.send",
+        "args": "<S-l>",
+        "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'"
+    },
+    {
+        "key": "shift+m",
+        "command": "vscode-neovim.send",
+        "args": "<S-m>",
+        "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'"
+    },
+    {
+        "key": "shift+h",
+        "command": "vscode-neovim.send",
+        "args": "<S-h>",
+        "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'"
     }
 ]

@@ -1,4 +1,8 @@
-" TODO there is a more contemporary version of this file
+" Fix bug with shift+h/m/l cancelling visual mode 
+xnoremap L L
+xnoremap M M
+xnoremap H H
+
 "VSCode
 function! s:split(...) abort
     let direction = a:1

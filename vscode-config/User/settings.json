@@ -1,5 +1,5 @@
 {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/Cellar/neovim/0.10.3/bin/nvim",
     "nvim.normalModeKeyBindingsNonRecursive": [
         {
@@ -662,7 +662,7 @@
     "github.copilot.chat.terminalChatLocation": "quickChat",
     "github.copilot.advanced": {},
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": false,
         "scminput": false
