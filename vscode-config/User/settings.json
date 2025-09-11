@@ -126,16 +126,16 @@
             "type": "bindings",
             "bindings": [
                 {
+                    "key": "c",
+                    "name": "open chat in new window",
+                    "type": "command",
+                    "command": "workbench.action.chat.openInNewWindow"
+                },
+                {
                     "key": "s",
                     "name": "trigger inline suggestion",
                     "type": "command",
                     "command": "editor.action.inlineSuggest.trigger"
-                },
-                {
-                    "key": "q",
-                    "name": "quick chat",
-                    "type": "command",
-                    "command": "workbench.action.openQuickChat"
                 },
                 {
                     "key": "i",
@@ -780,5 +780,8 @@
                 }
             },
         ]
-    }
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }

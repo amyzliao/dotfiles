@@ -313,14 +313,6 @@
         "command": "whichkey.show"
     },
     {
-        "key": "ctrl+shift+b",
-        "command": "workbench.action.toggleAuxiliaryBar"
-    },
-    {
-        "key": "alt+cmd+b",
-        "command": "-workbench.action.toggleAuxiliaryBar"
-    },
-    {
         "key": "escape escape",
         "command": "-workbench.action.exitZenMode",
         "when": "inZenMode"
@@ -347,5 +339,34 @@
         "command": "vscode-neovim.send",
         "args": "<S-h>",
         "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-expandLineSelection",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+cmd+i",
+        "command": "-workbench.action.chat.open",
+        "when": "!chatSetupDisabled && !chatSetupHidden"
+    },
+    {
+        "key": "shift+cmd+i",
+        "command": "-workbench.action.chat.openAgent",
+        "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+    },
+    {
+        "key": "cmd+0",
+        "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "cmd+n",
+        "command": "-workbench.action.openChat",
+        "when": "chatIsEnabled && inChat && inChatEditor"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-workbench.action.chat.newChat",
+        "when": "chatIsEnabled && inChat"
     }
 ]

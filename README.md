@@ -30,34 +30,5 @@ Bugs:
 * none :)
 
 ## keeping this repo up to date
+see function in `.zprofile`
 
-as defined in `~/.zprofile` :
-
-```
-# copy all config files to github dotfiles repo
-function cpcfgs() {
-    GIT_REPO="/Users/azl/Desktop/Projects-working/Coding-working/dotfiles"
-
-    YABAI=~/.yabairc
-    SKHD=~/.skhdrc
-    NVIM=~/.config/nvim
-    TMUX=~/.config/tmux
-    VSC_SETTINGS=~/Library/Application\ Support/Code/User/settings.json
-    VSC_KEYBINDINGS=~/Library/Application\ Support/Code/User/keybindings.json
-
-    cd $GIT_REPO
-    cp -f "$YABAI" .yabairc
-    cp -f "$SKHD" .skhdrc
-    rm -rf .config
-    cp -rf "$CONFIG" .config
-    cp -f "$VSC_SETTINGS" vscode-config/User/settings.json
-    cp -f "$VSC_KEYBINDINGS" vscode-config/User/keybindings.json 
-}
-
-```
-
-to update configs, run 
-
-```
-cpcfgs
-```
