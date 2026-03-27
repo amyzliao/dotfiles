@@ -60,7 +60,6 @@ yabai -m rule --add label="Claude" app="^Claude$" title=".*" manage=off
 
 # when nothing is in focus, focus some visible window
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
-yabai -m signal --add event=window_minimized action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
 echo "yabai configuration loaded.."

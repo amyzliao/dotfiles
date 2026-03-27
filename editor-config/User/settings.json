@@ -1,6 +1,6 @@
 {
     "editor.formatOnSave": false,
-    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/Cellar/neovim/0.10.3/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
     "nvim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -122,38 +122,14 @@
         },
         {
             "key": "c",
-            "name": "github copilot...",
+            "name": "cursor...",
             "type": "bindings",
             "bindings": [
-                {
-                    "key": "c",
-                    "name": "open chat in new window",
-                    "type": "command",
-                    "command": "workbench.action.chat.openInNewWindow"
-                },
-                {
-                    "key": "s",
-                    "name": "trigger inline suggestion",
-                    "type": "command",
-                    "command": "editor.action.inlineSuggest.trigger"
-                },
                 {
                     "key": "i",
                     "name": "inline chat",
                     "type": "command",
-                    "command": "inlineChat.startWithCurrentLine"
-                },
-                {
-                    "key": "e",
-                    "name": "focus copilot edits",
-                    "type": "command",
-                    "command": "workbench.panel.chat.view.edits.focus"
-                },
-                {
-                    "key": "o",
-                    "name": "toggle copilot on/off",
-                    "type": "command",
-                    "command": "github.copilot.toggleCopilot"
+                    "command": "aipopup.action.modal.generate"
                 },
             ]
         },
@@ -398,6 +374,25 @@
             "args": ":noh<CR>"
         },
         {
+            "key": "p",
+            "name": "path...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "a",
+                    "name": "copy absolute path",
+                    "type": "command",
+                    "command": "copyFilePath"
+                },
+                {
+                    "key": "r",
+                    "name": "copy relative path",
+                    "type": "command",
+                    "command": "copyRelativeFilePath"
+                }
+            ]
+        },
+        {
             "key": "s",
             "name": "Search...",
             "type": "bindings",
@@ -631,10 +626,6 @@
             "command": "workbench.action.toggleZenMode"
         }
     ],
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-    "editor.minimap.enabled": false,
     "editor.tabSize": 2,
     "[css]": {
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
@@ -652,13 +643,13 @@
     "security.workspace.trust.untrustedFiles": "open",
     "vscode-neovim.neovimExecutablePaths.linux": "",
     "vscode-neovim.neovimExecutablePaths.win32": "",
-    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/azl/.config/nvim/init.vim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/amy.liao/.config/nvim/init.vim",
     "vscode-neovim.compositeKeys": {},
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
         "workbench.action.tasks.runTask"
     ],
-    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.linux": "tmux",
     "github.copilot.chat.terminalChatLocation": "quickChat",
     "github.copilot.advanced": {},
     "github.copilot.enable": {
@@ -697,7 +688,7 @@
                 "scope": "markup.italic.markdown",
                 "settings": {
                     // dark mode
-                    "foreground": "#D7BA7D",
+                    "foreground": "#edc97c",
                     // light mode
                     // "foreground": "#ba7506",
                     "fontStyle": "italic",
@@ -722,6 +713,12 @@
                 "scope": "markup.inline.raw",
                 "settings": {
                     "foreground": "#4EC9B0",
+                }
+            },
+            {
+                "scope": "markup.fenced_code.block.markdown",
+                "settings": {
+                    "foreground": "#CE9178",
                 }
             },
             {
@@ -765,9 +762,9 @@
                 "scope": "heading.5.markdown entity.name.section.markdown, heading.5.markdown punctuation.definition.heading.markdown",
                 "settings": {
                     // dark mode
-                    // "foreground": "#569CD6",
+                    "foreground": "#569CD6",
                     // light mode
-                    "foreground": "#2279c1",
+                    // "foreground": "#2279c1",
                 }
             },
             {
@@ -779,9 +776,48 @@
                     // "foreground": "#2279c1",
                 }
             },
+            {
+                "scope": "markup.list.unnumbered meta.link.reference.markdown string.other.link.title.markdown",
+                "settings": {
+                    "foreground": "#b59cd2"
+                }
+            }
         ]
     },
-    "diffEditor.ignoreTrimWhitespace": false,
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "workbench.activityBar.orientation": "vertical",
+    "workbench.colorTheme": "Default Dark+",
+    "remote.SSH.remotePlatform": {
+        "alarms-firmware--amy-colossus-verkada.verkada.sandboxes.site": "linux",
+        "app--amy-sylvie-verkada.verkada.sandboxes.site": "linux",
+        "app--amy-android-firmware-verkada.verkada.sandboxes.site": "linux",
+        "app--amyliao-verkada.verkada.sandboxes.site": "linux"
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "cursor.general.disableHttp2": true,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "makefile.configureOnOpen": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.navigateLeft",
+        "workbench.action.navigateRight",
+        "workbench.action.navigateUp",
+        "workbench.action.navigateDown"
+    ],
+    "terraform.experimentalFeatures.prefillRequiredFields": true,
+    "terraform.languageServer.enable": true,
+    "[terraform]": {
+      "editor.formatOnSave": false,
+      "editor.defaultFormatter": "hashicorp.terraform"
+    },
+    "gopls": {
+        "build.buildFlags": ["-tags=colossus"]       
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "gitlens.ai.model": "gitkraken",
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor.composer.queueMessageDefaultBehavior": "stop-and-send",
+    "workbench.statusBar.visible": false,
 }

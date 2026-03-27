@@ -8,7 +8,7 @@ These things live in root `~/` :
 .config
 ```
 
-The `vscode-config/User` directory just holds my vscode User `keybindings.json` and User `settings.json` files.
+The `editor-config/User` directory just holds my vscode/cursor User `keybindings.json` and User `settings.json` files.
 
 I use:
 * [yabai](https://github.com/koekeishiya/yabai/wiki) tiling window manager
@@ -29,6 +29,9 @@ It's also important to note:
 Bugs:
 * none :)
 
+## to use these configs
+copy paste
+
 ## keeping this repo up to date
-see function in `.zprofile`
+after `source ~/.zshrc`, use alias `update-dotfiles` to run `update_dotfiles.sh`.
 
