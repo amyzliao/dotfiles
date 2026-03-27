@@ -33,5 +33,4 @@ Bugs:
 copy paste
 
 ## keeping this repo up to date
-after `source ~/.zshrc`, use alias `update-dotfiles` to run `update_dotfiles.sh`.
-
+run `update_dotfiles.sh`. i recommed adding the `update-dotfiles` alias in `.zshrc` to make it easy.
