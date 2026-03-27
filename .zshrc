@@ -1,5 +1,4 @@
-eval "$(pyenv init -)"
-
+# generic
 alias yabai-config='code ~/.yabairc'
 alias skhd-config='code ~/.skhdrc'
 
