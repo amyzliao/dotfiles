@@ -810,7 +810,9 @@
       "editor.defaultFormatter": "hashicorp.terraform"
     },
     "gopls": {
-        "build.buildFlags": ["-tags=colossus"]       
+        "build.env": {
+            "GOPACKAGESDRIVER": "off"
+        }
     },
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
@@ -820,4 +822,5 @@
     "cursor.composer.shouldChimeAfterChatFinishes": true,
     "cursor.composer.queueMessageDefaultBehavior": "stop-and-send",
     "workbench.statusBar.visible": false,
+    "gitlens.rebaseEditor.openOnPausedRebase": false,
 }
