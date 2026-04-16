@@ -19,3 +19,29 @@ parse_git_branch() {
 }
 setopt PROMPT_SUBST
 export PROMPT='┌%F{114}%n %F{117}%d %F{218}$(parse_git_branch)%f'$'\n''└%% '
+
+## enable vi mode in line editor
+bindkey -v
+### Reduce mode switching delay (default is 0.4s)
+export KEYTIMEOUT=1
+### Re-enable ctrl-r for reverse history search (vi mode disables it)
+bindkey -M viins '^R' history-incremental-search-backward
+### Show cursor shape based on mode (block for normal, beam for insert)
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]]; then
+    echo -ne '\e[2 q'  # block cursor
+  else
+    echo -ne '\e[6 q'  # beam cursor
+  fi
+}
+zle -N zle-keymap-select
+### Start with beam cursor
+function zle-line-init { echo -ne '\e[6 q' }
+zle -N zle-line-init
+### vi yank copies to clipboard
+function vi-yank-pbcopy {
+  zle vi-yank
+  echo -n "$CUTBUFFER" | pbcopy
+}
+zle -N vi-yank-pbcopy
+bindkey -M vicmd 'y' vi-yank-pbcopy

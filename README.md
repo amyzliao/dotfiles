@@ -31,6 +31,7 @@ Bugs:
 
 ## to use these configs
 copy paste
+for `mac_shortcuts`, refer to `instructions.md`.
 
 ## keeping this repo up to date
 run `update_dotfiles.sh`. i recommed adding the `update-dotfiles` alias in `.zshrc` to make it easy.
