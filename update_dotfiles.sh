@@ -34,8 +34,17 @@ if [ -n "$EDITOR_DIR" ]; then
   cp -f "$EDITOR_SETTINGS" editor-config/User/settings.json
   cp -f "$EDITOR_KEYBINDINGS" editor-config/User/keybindings.json
 fi
+
+# mac shortcuts
 mkdir -p mac_shortcuts
 defaults export com.apple.symbolichotkeys "$GIT_REPO/mac_shortcuts/symbolichotkeys.plist"
 plutil -convert xml1 "$GIT_REPO/mac_shortcuts/symbolichotkeys.plist"
 MAC_VERSION="$(sw_vers -productVersion)"
 sed -i '' "s/^MAC_VERSION: .*/MAC_VERSION: $MAC_VERSION/" "$GIT_REPO/mac_shortcuts/instructions.md"
+
+# arc shortcuts
+ARC_KEYBINDINGS="$HOME/Library/Application Support/Arc/StorableKeyBindings.json"
+if [ -f "$ARC_KEYBINDINGS" ]; then
+  mkdir -p arc_shortcuts
+  cp -f "$ARC_KEYBINDINGS" "$GIT_REPO/arc_shortcuts/StorableKeyBindings.json"
+fi
