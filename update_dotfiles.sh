@@ -7,6 +7,7 @@ NVIM="$HOME/.config/nvim"
 TMUX="$HOME/.config/tmux"
 ZSHRC="$HOME/.zshrc"
 ZPROFILE="$HOME/.zprofile"
+AEROSPACE="$HOME/.aerospace.toml"
 
 CURSOR_DIR="$HOME/Library/Application Support/Cursor/User"
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
@@ -26,6 +27,7 @@ cp -f "$YABAI" .yabairc
 cp -f "$SKHD" .skhdrc
 cp -f "$ZSHRC" .zshrc
 cp -f "$ZPROFILE" .zprofile
+cp -f "$AEROSPACE" .aerospace.toml
 rm -rf .config
 mkdir -p .config/nvim .config/tmux
 cp -rf "$NVIM"/ .config/nvim/

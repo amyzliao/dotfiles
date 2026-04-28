@@ -821,6 +821,6 @@
     "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
     "cursor.composer.shouldChimeAfterChatFinishes": true,
     "cursor.composer.queueMessageDefaultBehavior": "stop-and-send",
-    "workbench.statusBar.visible": false,
     "gitlens.rebaseEditor.openOnPausedRebase": false,
+    "workbench.statusBar.visible": false,
 }

@@ -22,6 +22,8 @@ export PROMPT='┌%F{114}%n %F{117}%d %F{218}$(parse_git_branch)%f'$'\n''└%% '
 
 ## enable vi mode in line editor
 bindkey -v
+### backspace works as normal
+bindkey -M viins '^?' backward-delete-char
 ### Reduce mode switching delay (default is 0.4s)
 export KEYTIMEOUT=1
 ### Re-enable ctrl-r for reverse history search (vi mode disables it)

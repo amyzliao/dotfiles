@@ -1,0 +1,178 @@
+# Converted from my yabai + skhd config
+# To fully set up aerospace, 
+# - use only 1 macOS space 
+# - disable "displays have separate spaces" `defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer`
+#   - note: this conflicts with yabai
+# - group windows by application `defaults write com.apple.dock expose-group-apps -bool true && killall Dock`
+# - set `start-at-login = true` (line 10)
+
+config-version = 2
+
+start-at-login = false
+
+# BSP layout equivalent
+default-root-container-layout = 'tiles'
+
+# yabai split_type = auto
+default-root-container-orientation = 'auto'
+
+accordion-padding = 30
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# yabai had mouse_follows_focus = on
+on-focus-changed = ['move-mouse window-lazy-center']
+
+automatically-unhide-macos-hidden-apps = false
+
+[key-mapping]
+    preset = 'qwerty'
+
+# yabai gaps: top/bottom/left/right padding = 6, window_gap = 6
+[gaps]
+    inner.horizontal = 6
+    inner.vertical =   6
+    outer.left =       6
+    outer.bottom =     6
+    outer.top =        6
+    outer.right =      6
+
+# ── Floating rules (yabai manage=off apps) ────────────────────────
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^Finder$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^FaceTime$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^System Preferences$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^System Settings$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^App Store$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^Calculator$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^Dictionary$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'Software Update'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'System Information'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^Unity Hub$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^Notes$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^Riot Client'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^League of Legends$'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^Claude$'
+    run = 'layout floating'
+
+# ── Main key bindings ─────────────────────────────────────────────
+
+[mode.main.binding]
+
+    # Focus window (alt-h/j/k/l)
+    alt-h = 'focus left'
+    alt-j = 'focus down'
+    alt-k = 'focus up'
+    alt-l = 'focus right'
+
+    # Focus monitor (alt-u/i → prev/next display)
+    alt-u = 'focus-monitor prev'
+    alt-i = 'focus-monitor next'
+
+    # Move window within workspace (shift+alt-h/j/k/l)
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+
+    # Move window between monitors (shift+alt-u/i)
+    alt-shift-u = ['move-node-to-monitor prev', 'focus-monitor prev']
+    alt-shift-i = ['move-node-to-monitor next', 'focus-monitor next']
+
+    # Focus workspace (alt-1..6, alt-n/p for prev/next)
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
+    alt-8 = 'workspace 8'
+    alt-9 = 'workspace 9'
+    alt-n = 'workspace prev'
+    alt-p = 'workspace next'
+
+    # Move window to workspace and follow focus (shift+alt-1..6, n/p)
+    alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
+    alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
+    alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
+    alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
+    alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+    alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
+    alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+    alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
+    alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
+    alt-shift-n = ['move-node-to-workspace prev', 'workspace prev']
+    alt-shift-p = ['move-node-to-workspace next', 'workspace next']
+
+    # Resize (cmd+alt-h/j/k/l)
+    cmd-alt-h = 'resize width -25'
+    cmd-alt-l = 'resize width +25'
+    cmd-alt-j = 'resize height +25'
+    cmd-alt-k = 'resize height -25'
+
+    # Toggle float (alt-f)
+    alt-f = 'layout floating tiling'
+
+    # Toggle fullscreen (alt-m)
+    alt-m = 'fullscreen'
+
+    # Toggle layout orientation
+    alt-slash = 'layout tiles horizontal vertical'
+    alt-comma = 'layout accordion horizontal vertical'
+
+    # Enter service mode (for reload, reset, etc.)
+    alt-shift-semicolon = 'mode service'
+
+# ── Service mode ──────────────────────────────────────────────────
+
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main']
+    f = ['layout floating tiling', 'mode main']
+    backspace = ['close-all-windows-but-current', 'mode main']
+    h = ['join-with left', 'mode main']
+    j = ['join-with down', 'mode main']
+    k = ['join-with up', 'mode main']
+    l = ['join-with right', 'mode main']

@@ -549,4 +549,14 @@
         "command": "workbench.action.navigateUp",
         "when": "terminalFocus"
     },
+    {
+        "key": "cmd+e",
+        "command": "-cursor.toggleAgentWindowIDEUnification",
+        "when": "!isGlass && workbenchState != 'empty'"
+    },
+    {
+        "key": "cmd+0",
+        "command": "-workbench.action.focusSideBar",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
 ]
