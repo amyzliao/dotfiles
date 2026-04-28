@@ -28,7 +28,7 @@ It's also important to note:
 * my ctrl key is rebound to globe
 * my option key is still option
 
-Bugs:
+Known bugs:
 * none :)
 
 ## to use these configs
