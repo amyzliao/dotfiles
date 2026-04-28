@@ -1,4 +1,4 @@
-# I use a mac M2 chip
+# I use a mac M-series chip
 
 These things live in root `~/` :
 
@@ -19,6 +19,8 @@ I use:
 * [the neovim vscode extension](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 * [the which key vscode extension](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey)
 * [tmux](https://github.com/tmux/tmux/wiki)
+
+Note: I have also included an [aerospace](https://nikitabobko.github.io/AeroSpace/guide) config, but I do not use aerospace. This config is literally just my yabai+skhd config translated to aerospace. I do not use aerospace because it does not support stay-on-top windows. When they build support for that, I might switch over.
 
 It's also important to note:
 * my globe key is rebound to command
