@@ -285,10 +285,6 @@
         "command": "whichkey.show"
     },
     {
-        "key": "ctrl+b",
-        "command": "workbench.action.toggleAuxiliaryBar"
-    },
-    {
         "key": "alt+cmd+b",
         "command": "-workbench.action.toggleAuxiliaryBar"
     },
@@ -443,7 +439,12 @@
     {
         "key": "shift+cmd+c",
         "command": "copyRelativeFilePath",
-        "when": "editorFocus"
+        "when": "editorFocus && !editorHasSelection"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "qishan233.copy.relative.path.line",
+        "when": "editorFocus && editorHasSelection"
     },
     {
         "key": "cmd+r shift+alt+cmd+c",
@@ -558,5 +559,15 @@
         "key": "cmd+0",
         "command": "-workbench.action.focusSideBar",
         "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.editor.nextChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-cursorDown",
+        "when": "textInputFocus"
     },
 ]

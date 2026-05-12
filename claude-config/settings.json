@@ -1,0 +1,7 @@
+{
+  "theme": "dark",
+  "editorMode": "vim",
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  }
+}

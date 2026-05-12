@@ -9,18 +9,10 @@ ZSHRC="$HOME/.zshrc"
 ZPROFILE="$HOME/.zprofile"
 AEROSPACE="$HOME/.aerospace.toml"
 
-CURSOR_DIR="$HOME/Library/Application Support/Cursor/User"
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
-if [ -d "$CURSOR_DIR" ]; then
-  EDITOR_DIR="$CURSOR_DIR"
-elif [ -d "$VSCODE_DIR" ]; then
-  EDITOR_DIR="$VSCODE_DIR"
-else
-  echo "Warning: Neither Cursor nor VS Code config directory found"
-  EDITOR_DIR=""
-fi
-EDITOR_SETTINGS="$EDITOR_DIR/settings.json"
-EDITOR_KEYBINDINGS="$EDITOR_DIR/keybindings.json"
+EDITOR_SETTINGS="$VSCODE_DIR/settings.json"
+EDITOR_KEYBINDINGS="$VSCODE_DIR/keybindings.json"
+CLAUDE_DIR="$HOME/.claude"
 
 cd "$GIT_REPO"
 cp -f "$YABAI" .yabairc
@@ -32,9 +24,20 @@ rm -rf .config
 mkdir -p .config/nvim .config/tmux
 cp -rf "$NVIM"/ .config/nvim/
 cp -rf "$TMUX"/ .config/tmux/
-if [ -n "$EDITOR_DIR" ]; then
+if [ -d "$VSCODE_DIR" ]; then
   cp -f "$EDITOR_SETTINGS" editor-config/User/settings.json
   cp -f "$EDITOR_KEYBINDINGS" editor-config/User/keybindings.json
+else
+  echo "Warning: VS Code config directory not found"
+fi
+
+# claude code
+if [ -d "$CLAUDE_DIR" ]; then
+  mkdir -p claude-config
+  cp -f "$CLAUDE_DIR/CLAUDE.md" claude-config/CLAUDE.md
+  cp -f "$CLAUDE_DIR/settings.json" claude-config/settings.json
+else
+  echo "Warning: Claude Code config directory not found"
 fi
 
 # mac shortcuts
