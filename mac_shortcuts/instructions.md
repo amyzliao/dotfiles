@@ -8,4 +8,4 @@ note:
 - this will probably work well across minor versions, but not recommended across major versions. just manually apply in that case.
 
 this file was created using:
-MAC_VERSION: 26.4.1
+MAC_VERSION: 26.5.1

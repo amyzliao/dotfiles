@@ -114,13 +114,24 @@ shift + alt - 6 : id=$(yabai -m query --windows --window | jq '.id'); yabai -m w
 shift + alt - n : id=$(yabai -m query --windows --window | jq '.id'); yabai -m window --space prev; yabai -m space --focus prev; yabai -m window --focus $id
 shift + alt - p : id=$(yabai -m query --windows --window | jq '.id'); yabai -m window --space next; yabai -m space --focus next; yabai -m window --focus $id
 
-# Create empty space
-cmd + alt - 0x18 : yabai -m space --create && \
-                   index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
-                   yabai -m space --focus "${index}"
+# Create empty space next to the current one (to the right) and focus it
+cmd + alt - 0x18 : cur="$(yabai -m query --spaces --space | jq '.index')" && \
+                   yabai -m space --create && \
+                   last="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false)) | map(.index) | max')" && \
+                   yabai -m space "${last}" --move "$((cur + 1))" && \
+                   yabai -m space --focus "$((cur + 1))"
 
-# Destroy space
-cmd + alt - 0x1B : yabai -m space --destroy; yabai -m space --focus 3
+# Destroy space: move any windows to the previous space (else next), then destroy.
+# If it's the only space (no prev, no next), abort so windows aren't lost.
+cmd + alt - 0x1B : cur="$(yabai -m query --spaces --space | jq '.index')"; \
+                   prev="$(yabai -m query --spaces --display | jq --argjson c "$cur" '[.[] | select(."is-native-fullscreen" == false) | .index] | map(select(. < $c)) | max')"; \
+                   next="$(yabai -m query --spaces --display | jq --argjson c "$cur" '[.[] | select(."is-native-fullscreen" == false) | .index] | map(select(. > $c)) | min')"; \
+                   if [ "$prev" != "null" ]; then dest="$prev"; elif [ "$next" != "null" ]; then dest="$next"; else dest=""; fi; \
+                   if [ -n "$dest" ]; then \
+                       for wid in $(yabai -m query --windows --space | jq '.[].id'); do yabai -m window "$wid" --space "$dest"; done; \
+                       yabai -m space --destroy; \
+                       if [ "$dest" -gt "$cur" ]; then yabai -m space --focus "$((dest - 1))"; else yabai -m space --focus "$dest"; fi; \
+                   fi
 
 # Increase window size
 cmd + alt - h : yabai -m window --resize left:-25:0;

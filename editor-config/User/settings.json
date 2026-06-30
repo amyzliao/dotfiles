@@ -652,12 +652,18 @@
     "terminal.integrated.defaultProfile.linux": "tmux",
     "github.copilot.chat.terminalChatLocation": "quickChat",
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "plaintext": false,
         "markdown": false,
         "scminput": false
     },
     "terminal.integrated.defaultProfile.osx": "tmux",
+    "terminal.integrated.profiles.osx": {
+        "tmux": {
+            "path": "/opt/homebrew/bin/tmux",
+            "icon": "terminal-tmux"
+        }
+    },
     "zenMode.fullScreen": false,
     "zenMode.hideLineNumbers": false,
     "zenMode.showTabs": "none",
@@ -809,10 +815,11 @@
     "terraform.experimentalFeatures.prefillRequiredFields": true,
     "terraform.languageServer.enable": true,
     "[terraform]": {
-      "editor.formatOnSave": false,
-      "editor.defaultFormatter": "hashicorp.terraform"
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "hashicorp.terraform"
     },
     "gopls": {
+        // "build.buildFlags": ["-tags=colossus"],
         "build.env": {
             "GOPACKAGESDRIVER": "off"
         }
@@ -829,5 +836,11 @@
     "editor.minimap.enabled": false,
     "workbench.editor.useModal": "off",
     "claudeCode.preferredLocation": "panel",
-    "copyPathWithLineNumber.range.connector": "dash"
+    "copyPathWithLineNumber.range.connector": "dash",
+    "workbench.editor.navigationScope": "editorGroup",
+    "terminal.integrated.enableVisualBell": true,
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    "terminal.integrated.initialHint": false
 }

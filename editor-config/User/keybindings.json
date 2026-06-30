@@ -570,4 +570,14 @@
         "command": "-cursorDown",
         "when": "textInputFocus"
     },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.navigateBack",
+        "when": "editorTextFocus && neovim.init && neovim.mode != 'insert' && neovim.mode != 'visual'"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.navigateForward",
+        "when": "editorTextFocus && neovim.init && neovim.mode != 'insert' && neovim.mode != 'visual'"
+    }
 ]

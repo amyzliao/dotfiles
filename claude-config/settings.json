@@ -1,7 +1,26 @@
 {
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/amy.liao/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
+  },
   "theme": "dark",
   "editorMode": "vim",
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true
+  "skipAutoPermissionPrompt": true,
+  "preferredNotifChannel": "terminal_bell",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "t=$(ps -o tty= -p $PPID 2>/dev/null | tr -d ' '); [ -n \"$t\" ] && [ \"$t\" != \"??\" ] && printf '\\a' > \"/dev/$t\" 2>/dev/null; true"
+          }
+        ]
+      }
+    ]
   }
 }
