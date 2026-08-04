@@ -1,16 +1,4 @@
 {
-  "statusLine": {
-    "type": "command",
-    "command": "bash /Users/amy.liao/.claude/statusline-command.sh"
-  },
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
-    "gopls-lsp@claude-plugins-official": true
-  },
-  "theme": "dark",
-  "editorMode": "vim",
-  "skipAutoPermissionPrompt": true,
-  "preferredNotifChannel": "terminal_bell",
   "hooks": {
     "Stop": [
       {
@@ -22,5 +10,19 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/amy.liao/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
+  "theme": "dark",
+  "editorMode": "vim",
+  "preferredNotifChannel": "terminal_bell",
+  "skipAutoPermissionPrompt": true,
+  "model": "opus[1m]"
 }

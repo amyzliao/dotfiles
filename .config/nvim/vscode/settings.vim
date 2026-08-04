@@ -60,3 +60,6 @@ xnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
 
 " LSP: Find all references
 nnoremap <silent> gr :call VSCodeNotify('editor.action.goToReferences')<CR>
+
+" LSP: Go to implementations
+nnoremap <silent> gi :call VSCodeNotify('editor.action.goToImplementation')<CR>

@@ -12,12 +12,16 @@ alias gsub='echo "git submodule update --init --recursive" \
             && echo "git submodule foreach --recursive git lfs pull" \
             && git submodule foreach --recursive git lfs pull'
 alias gpush='git push -u origin HEAD'
+alias glog='git log --oneline'
 
 alias update-dotfiles='~/Desktop/dotfiles/update_dotfiles.sh'
+alias yabai-rebalance='cur=$(yabai -m query --spaces --space | jq ".index"); for sid in $(yabai -m query --spaces | jq ".[].index"); do yabai -m space --focus $sid; yabai -m space --balance; done; yabai -m space --focus $cur'
 
 alias agent='agent --mode=ask'
 export CURSOR_CLI_BLOCK_CURSOR_AGENT=true
 export CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1
+
+alias caf='caffeinate -d'
 
 parse_git_branch() {
   git symbolic-ref --short HEAD 2>/dev/null

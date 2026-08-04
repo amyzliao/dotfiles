@@ -379,7 +379,7 @@
         "when": "!terminalFocus"
     },
     {
-        "key": "shift+cmd+c",
+        "key": "ctrl+cmd+c",
         "command": "copyRelativeFilePath",
         "when": "!editorFocus"
     },
@@ -437,12 +437,12 @@
         "command": "-workbench.action.moveActiveEditorGroupUp"
     },
     {
-        "key": "shift+cmd+c",
+        "key": "ctrl+cmd+c",
         "command": "copyRelativeFilePath",
         "when": "editorFocus && !editorHasSelection"
     },
     {
-        "key": "shift+cmd+c",
+        "key": "ctrl+cmd+c",
         "command": "qishan233.copy.relative.path.line",
         "when": "editorFocus && editorHasSelection"
     },
@@ -579,5 +579,10 @@
         "key": "ctrl+]",
         "command": "workbench.action.navigateForward",
         "when": "editorTextFocus && neovim.init && neovim.mode != 'insert' && neovim.mode != 'visual'"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.browser.addElementToChat",
+        "when": "browserHasUrl && chatIsEnabled && !browserHasError && activeEditor == 'workbench.editor.browser'"
     }
 ]

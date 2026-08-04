@@ -842,5 +842,7 @@
     "accessibility.signals.terminalBell": {
         "sound": "on"
     },
-    "terminal.integrated.initialHint": false
+    "terminal.integrated.initialHint": false,
+    "chat.viewSessions.orientation": "stacked",
+    "git.openRepositoryInParentFolders": "never"
 }
