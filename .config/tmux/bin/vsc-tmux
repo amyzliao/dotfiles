@@ -1,0 +1,20 @@
+#!/bin/sh
+# Attach to (or create) the tmux session for the current directory.
+# VS Code starts terminals in the workspace folder, so each window gets its own sessions.
+#
+# usage: vsc-tmux [role]
+#   main (default) -> <folder>-<hash>
+#   claude         -> <folder>-<hash>-claude
+# <hash> is a short checksum of the full path, so same-named folders don't collide.
+
+role="${1:-main}"
+dir="$PWD"
+
+name="$(printf '%s' "${dir##*/}" | tr '.:' '__')"   # tmux disallows . and : in session names
+hash="$(printf '%s' "$dir" | cksum | awk '{ printf "%04x", $1 % 65536 }')"
+session="$name-$hash"
+[ "$role" != main ] && session="$session-$role"
+
+# VS Code may launch us without homebrew on PATH
+tmux="$(command -v tmux || echo /opt/homebrew/bin/tmux)"
+exec "$tmux" new-session -A -s "$session" -c "$dir"

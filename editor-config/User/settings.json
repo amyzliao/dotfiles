@@ -660,13 +660,21 @@
     "terminal.integrated.defaultProfile.osx": "tmux",
     "terminal.integrated.profiles.osx": {
         "tmux": {
-            "path": "/opt/homebrew/bin/tmux",
+            "path": "/Users/amy.liao/.local/bin/vsc-tmux",
+            "args": ["main"],
+            "icon": "terminal-tmux"
+        }
+    },
+    // remote sandboxes (installed by ~/.config/tmux/setup-remote.sh)
+    "terminal.integrated.profiles.linux": {
+        "tmux": {
+            "path": "/home/owner/.local/bin/vsc-tmux",
+            "args": ["main"],
             "icon": "terminal-tmux"
         }
     },
     "zenMode.fullScreen": false,
     "zenMode.hideLineNumbers": false,
-    "zenMode.showTabs": "none",
     "zenMode.silentNotifications": false,
     "zenMode.centerLayout": false,
     "[markdown]": {
@@ -810,7 +818,8 @@
         "workbench.action.navigateLeft",
         "workbench.action.navigateRight",
         "workbench.action.navigateUp",
-        "workbench.action.navigateDown"
+        "workbench.action.navigateDown",
+        "vscTmux.navigate"
     ],
     "terraform.experimentalFeatures.prefillRequiredFields": true,
     "terraform.languageServer.enable": true,
@@ -818,12 +827,12 @@
         "editor.formatOnSave": false,
         "editor.defaultFormatter": "hashicorp.terraform"
     },
-    "gopls": {
-        // "build.buildFlags": ["-tags=colossus"],
-        "build.env": {
-            "GOPACKAGESDRIVER": "off"
-        }
-    },
+    // "gopls": {
+    // "build.buildFlags": ["-tags=colossus"],
+    // "build.env": {
+    //     "GOPACKAGESDRIVER": "off"
+    // }
+    // },
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
@@ -843,6 +852,21 @@
         "sound": "on"
     },
     "terminal.integrated.initialHint": false,
+    "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
     "chat.viewSessions.orientation": "stacked",
-    "git.openRepositoryInParentFolders": "never"
+    "git.openRepositoryInParentFolders": "never",
+    "zenMode.showTabs": "none",
+    "diffEditor.renderSideBySide": false,
+    "workbench.colorCustomizations": {
+        // line-level tint (keep faint)
+        "diffEditor.insertedLineBackground": "#2ea04326",
+        "diffEditor.removedLineBackground": "#f8514926",
+        // word-level tint — this is the loud one. Make it transparent to kill it entirely.
+        "diffEditor.insertedTextBackground": "#2ea04326",
+        "diffEditor.removedTextBackground": "#f8514926",
+        // optional: outline instead of fill, so you still see what changed
+        // "diffEditor.insertedTextBorder": "#2ea04380",
+        // "diffEditor.removedTextBorder": "#f8514980"
+    },
+    "diffEditor.ignoreTrimWhitespace": false
 }

@@ -1,10 +1,7 @@
+typeset -U path PATH
+
 # generic
-function gitall() {
-    git add .
-    if [ "$1" != "" ]
-    then
-        git commit -m "$1"
-    else
-        git commit -m update # default commit message is `update`
-    fi # closing statement of if-else block
-}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export CURSOR_CLI_BLOCK_CURSOR_AGENT=true
+export CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1

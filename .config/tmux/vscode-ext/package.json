@@ -1,0 +1,17 @@
+{
+  "name": "vsc-tmux",
+  "displayName": "vsc-tmux",
+  "description": "Open per-workspace tmux sessions in VS Code terminals",
+  "version": "0.0.1",
+  "publisher": "amyzliao",
+  "license": "UNLICENSED",
+  "repository": "https://github.com/amyzliao/dotfiles",
+  "engines": { "vscode": "^1.90.0" },
+  "main": "./extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "contributes": {
+    "commands": [
+      { "command": "vscTmux.openClaude", "title": "Tmux: Open Claude Terminal" }
+    ]
+  }
+}
